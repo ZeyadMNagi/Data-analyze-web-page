@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Data Analyze project</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="upload">
+        <div id="dropZone" ondrop="drop(event)" ondragover="allowDrop(event)">
+          <p>Drag and drop CSV files here or click below to select files:</p>
+          <input
+            type="file"
+            id="fileInput"
+            accept=".csv"
+            multiple
+            onchange="handleFileSelect(event)"
+          />
+          <a href="#" onclick="closeUploader()" class="close">Clouse</a>
+        </div>
+        <div class="layout"></div>
+      </div>
+      <div style="display: flex; justify-content: center">
+        <div class="switcher">
+          <div
+            onclick="swich_section(this,0)"
+            data-sec="dataSection"
+            class="case"
+          >
+            The Data
+          </div>
+          <div
+            onclick="swich_section(this,1)"
+            data-sec="dataFunctions"
+            class="case"
+          >
+            Some Functions
+          </div>
+          <div
+            onclick="swich_section(this,2)"
+            data-sec="dataVisualize"
+            class="case"
+          >
+            Visualization
+          </div>
+        </div>
+      </div>
+
+      <div id="sections">
+        <section class="part" id="dataSection" style="overflow-x: scroll">
+          <h1>The Data</h1>
+          <div id="dataContent"></div>
+          <button id="showMoreBtn" onclick="showMoreRows()">Show More</button>
+          <br /><br /><br />
+          <a
+            href="#"
+            class="upload-btn"
+            onclick="document.querySelector('.upload').style.display = 'flex';"
+            >Upload New CSV File</a
+          >
+        </section>
+        <section class="part" id="dataFunctions">
+          <h1>Some Functions</h1>
+          <br /><br /><br />
+          <a
+            href="#"
+            class="upload-btn"
+            onclick="document.querySelector('.upload').style.display = 'flex';"
+            >Upload New CSV File</a
+          >
+        </section>
+        <section class="part" id="dataVisualize">
+          <h1>Visualization</h1>
+          <br /><br /><br />
+          <a
+            href="#"
+            class="upload-btn"
+            onclick="document.querySelector('.upload').style.display = 'flex';"
+            >Upload New CSV File</a
+          >
+        </section>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
