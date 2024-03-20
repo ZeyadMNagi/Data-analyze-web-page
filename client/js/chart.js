@@ -100,6 +100,14 @@ function createSingleChart() {
       values: data3,
       type: "pie",
     };
+  }else if (chartType === "box"){
+    trace = {
+      y: xValues,
+      type: "box"
+    }
+  } else {  
+    alert("Invalid single chart type selected.");
+    return;
   }
   const layout = { title: data3 };
   Plotly.newPlot("singleMyChart", [trace], layout);
