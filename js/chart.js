@@ -45,8 +45,11 @@ function createChart() {
   var index2 = csvData.columns.findIndex((column) => column[0] === data2);
 
   // Extract x and y values for the plot
-  var xValues = csvData.columns[index1].slice(1); // Exclude header
-  var yValues = csvData.columns[index2].slice(1); // Exclude header
+  var ValuesX = csvData.columns[index1].slice(1);
+  var ValuesY = csvData.columns[index2].slice(1);
+
+  var xValues = ValuesX.map(Number);
+  var yValues = ValuesY.map(Number);
 
   // Create Plotly trace based on selected chart type
   var trace;
@@ -97,19 +100,20 @@ function createSingleChart() {
   var index3 = csvData.columns.findIndex((column) => column[0] === data3);
 
   var xValues = csvData.columns[index3].slice(1); // Exclude header
+  var Values = xValues.map(Number);
 
   if (chartType === "pie") {
     trace = {
-      labels: xValues,
+      labels: Values,
       values: data3,
       type: "pie",
     };
-  }else if (chartType === "box"){
+  } else if (chartType === "box") {
     trace = {
-      y: xValues,
-      type: "box"
-    }
-  } else {  
+      y: Values,
+      type: "box",
+    };
+  } else {
     alert("Invalid single chart type selected.");
     return;
   }
@@ -124,6 +128,7 @@ function createHeatmap() {
   var numCols = zValues[0].length;
   var rowLabels = [];
   var colLabels = [];
+
   for (var i = 0; i < numRows; i++) {
     rowLabels.push(i);
   }
@@ -131,10 +136,12 @@ function createHeatmap() {
     colLabels.push(j);
   }
 
+  console.log(rowLabels, colLabels);
+
   var data = [
     {
       z: zValues,
-      x: colLabels,
+      x: rowLabels,
       y: rowLabels,
       type: "heatmap",
     },

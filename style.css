@@ -166,7 +166,9 @@ select {
 
 #ana{
   width: 40%;
-  
+  background: #35374B;
+  padding: 20px;
+  border-radius: 6px; 
 }
 
 img {
