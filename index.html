@@ -4,6 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <link
+      rel="shortcut icon"
+      href="./assets/OnlineData.png"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
     <title>Data Analyze project</title>
   </head>
   <body>
@@ -24,26 +33,31 @@
       </div>
       <div style="display: flex; justify-content: center">
         <div class="switcher">
+          <img src="./assets/OnlineData.png" alt="logo" />
           <div
             onclick="switchSection(this,0)"
             data-sec="dataSection"
             class="case"
           >
-            The Data
+            <h4>The Data</h4>
+
+            <i class="material-icons">data_usage</i>
           </div>
           <div
             onclick="switchSection(this,1)"
             data-sec="dataFunctions"
             class="case"
           >
-            Some Functions
+            <h4>Some Functions</h4>
+            <i class="material-icons">functions</i>
           </div>
           <div
             onclick="switchSection(this,2)"
             data-sec="dataVisualize"
             class="case"
           >
-            Visualization
+            <h4>Visualization</h4>
+            <i class="material-icons">insert_chart</i>
           </div>
         </div>
       </div>
@@ -124,6 +138,7 @@
       charset="utf-8"
     ></script>
     <script src="./js/main.js"></script>
+    <script src="./js/fileRead.js"></script>
     <script src="./js/chart.js"></script>
   </body>
 </html>
