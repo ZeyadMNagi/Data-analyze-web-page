@@ -41,7 +41,7 @@
   overflow-x: hidden;
   height: 100vh;
   width: 100%;
-  background: #183D3D;
+  background: #183d3d;
 }
 
 .switcher {
@@ -53,6 +53,7 @@
   background: #183d3d;
   justify-content: space-around;
   border-radius: 16px;
+  z-index: 999;
 }
 
 .switcher .case {
@@ -78,10 +79,13 @@ section {
   background: #040d12;
   box-sizing: border-box;
   color: #fefefe;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 h1 {
-  color: #93B1A6;
+  color: #93b1a6;
 }
 
 table {
@@ -117,4 +121,38 @@ td {
 
 #fileInput {
   margin: 15px;
+}
+
+.choose {
+  padding: 25px;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+}
+
+select {
+  margin: 8px;
+  padding: 5px;
+}
+
+#createChartBtn,
+#createSingleChartBtn,
+#createHeatmap {
+  width: 70%;
+  height: 50px;
+  margin: 10px auto;
+  display: block;
+  border-radius: 10px;
+  border: none;
+  background-image: linear-gradient(to right, #ffb300, #ff7e5a);
+  transition: 0.5s ease-in-out;
+  &:hover {
+    transform: scale(1.05);
+    font-weight: bolder;
+    letter-spacing: 1.5px;
+  }
 }
