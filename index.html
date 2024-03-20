@@ -17,7 +17,7 @@
   </head>
   <body>
     <div class="container">
-      <div class="upload">
+      <div class="upload" style="display: none">
         <div id="dropZone" ondrop="drop(event)" ondragover="allowDrop(event)">
           <p>Drag and drop CSV files here or click below to select files:</p>
           <input
@@ -63,7 +63,7 @@
       </div>
 
       <div id="sections">
-        <section class="part" id="dataSection" style="overflow-x: scroll">
+        <section class="part" id="dataSection">
           <h1>The Data</h1>
           <div id="dataContent"></div>
           <button id="showMoreBtn" onclick="showMoreRows()">Show More</button>
@@ -78,6 +78,19 @@
         <section class="part" id="dataFunctions">
           <h1>Some Functions</h1>
           <br /><br /><br />
+
+          <h4>Choose one column to get the Analyze of it:</h4>
+          <select name="data4" class="data4" id="data4"></select>
+          <br /><br />
+          <div id="ana"></div>
+          
+          <input
+            id="analyze"
+            type="submit"
+            value="Analyze Column"
+            onclick="analyzeColumn()"
+          />
+
           <a
             href="#"
             class="upload-btn"
@@ -140,5 +153,6 @@
     <script src="./js/main.js"></script>
     <script src="./js/fileRead.js"></script>
     <script src="./js/chart.js"></script>
+    <script src="./js/analyzeColumn.js"></script>
   </body>
 </html>

@@ -9,6 +9,7 @@ function update() {
   document.getElementById("data1").innerHTML = "";
   document.getElementById("data2").innerHTML = "";
   document.getElementById("data3").innerHTML = "";
+  document.getElementById("data4").innerHTML = "";
 
   // Populate dropdowns with column names
   for (let i = 0; i < csvData.columns.length; i++) {
@@ -21,6 +22,9 @@ function update() {
     ).innerHTML += `<option value="${columnName}">${columnName}</option>`;
     document.getElementById(
       "data3"
+    ).innerHTML += `<option value="${columnName}">${columnName}</option>`;
+    document.getElementById(
+      "data4"
     ).innerHTML += `<option value="${columnName}">${columnName}</option>`;
   }
 }
