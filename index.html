@@ -91,6 +91,13 @@
             onclick="analyzeColumn()"
           />
 
+          <h4>Delete a column from the dataset</h4>
+          <select name="delCol" id="delCol"></select>
+          <br><br>
+          <div id="delDone"></div>
+
+          <input id="Delete" type="submit" onclick="deleteCol()">
+
           <a
             href="#"
             class="upload-btn"
@@ -154,5 +161,7 @@
     <script src="./js/fileRead.js"></script>
     <script src="./js/chart.js"></script>
     <script src="./js/analyzeColumn.js"></script>
+    <script src="./js/update.js"></script>
+    <script src="./js/fileEdit.js"></script>
   </body>
 </html>

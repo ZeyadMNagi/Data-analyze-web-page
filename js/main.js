@@ -36,16 +36,19 @@ function showMoreRows() {
     var i = currentNumRowsShown + 1;
     i <
     Math.min(
-      csvData.rows.length,
+      csvData.columns[0].length,
       currentNumRowsShown + numRowsToShowIncrement + 1
     );
     i++
   ) {
     var row = document.createElement("tr");
-    for (var j = 0; j < csvData.rows[i].length; j++) {
+
+    for (var j = 0; j < csvData.columns.length; j++) {
       var cell = document.createElement("td");
-      cell.textContent = csvData.rows[i][j];
+      cell.textContent = csvData.columns[j][i];
       row.appendChild(cell);
+
+      dataContent.appendChild(row);
     }
     document.getElementById("dataContent").appendChild(row);
   }

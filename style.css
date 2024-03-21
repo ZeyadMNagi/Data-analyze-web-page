@@ -13,6 +13,7 @@
   height: 100vh;
   position: fixed;
   width: 100%;
+  z-index: 10000;
 }
 
 #dropZone {
@@ -148,7 +149,8 @@ select {
 #createChartBtn,
 #createSingleChartBtn,
 #createHeatmap,
-#analyze {
+#analyze,
+#Delete {
   width: 50%;
   height: 50px;
   margin: 10px auto;
@@ -164,7 +166,7 @@ select {
   }
 }
 
-#ana{
+#ana,#delDone{
   width: 40%;
   background: #35374B;
   padding: 20px;

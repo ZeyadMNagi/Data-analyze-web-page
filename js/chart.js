@@ -5,30 +5,6 @@ var data2;
 var data3;
 var chartType;
 
-function update() {
-  document.getElementById("data1").innerHTML = "";
-  document.getElementById("data2").innerHTML = "";
-  document.getElementById("data3").innerHTML = "";
-  document.getElementById("data4").innerHTML = "";
-
-  // Populate dropdowns with column names
-  for (let i = 0; i < csvData.columns.length; i++) {
-    const columnName = csvData.columns[i][0];
-    document.getElementById(
-      "data1"
-    ).innerHTML += `<option value="${columnName}">${columnName}</option>`;
-    document.getElementById(
-      "data2"
-    ).innerHTML += `<option value="${columnName}">${columnName}</option>`;
-    document.getElementById(
-      "data3"
-    ).innerHTML += `<option value="${columnName}">${columnName}</option>`;
-    document.getElementById(
-      "data4"
-    ).innerHTML += `<option value="${columnName}">${columnName}</option>`;
-  }
-}
-
 function createChart() {
   data1 = document.querySelector(".data1").value;
   data2 = document.querySelector(".data2").value;
@@ -122,10 +98,10 @@ function createSingleChart() {
 }
 
 function createHeatmap() {
-  var zValues = evColumn;
+  var zValues = csvData.columns;
 
-  var numRows = zValues.length;
-  var numCols = zValues[0].length;
+  var numRows = zValues[0].length;
+  var numCols = zValues.length;
   var rowLabels = [];
   var colLabels = [];
 
