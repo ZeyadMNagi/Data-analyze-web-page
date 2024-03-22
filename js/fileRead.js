@@ -10,7 +10,7 @@ function handleFiles(files) {
     var file = files[i];
     if (file.type === "text/csv" || file.type === "application/csv") {
       validFiles.push(file);
-      console.log(validFiles);
+      //.log(validFiles);
     } else {
       alert("File '" + file.name + "' is not a CSV file.");
     }
@@ -49,7 +49,7 @@ function parseCSV(csvData) {
 
   evColumn = columns;
   evRow = result;
-  console.log("evColumn: ", evColumn, "evRow: ", evRow);
+  //.log("evColumn: ", evColumn, "evRow: ", evRow);
 
   // Return an object containing both the original rows and the extracted columns
   return {

@@ -110,7 +110,7 @@ function createHeatmap() {
     for (let j = 0; j < zValues[i].length; j++) {
       cc = zValues[i][j] / Math.max(...zValues[i]);
       zValues[i][j] = cc;
-      console.log(cc);
+      //.log(cc);
     }
   }
 
@@ -134,7 +134,7 @@ function createHeatmap() {
     },
   };
 
-  console.table(zValues);
+  //.table(zValues);
   // Plot the heatmap
   Plotly.newPlot("heatMapDiv", data, layout);
 }

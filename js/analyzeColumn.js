@@ -13,14 +13,14 @@ function analyzeColumn() {
 }
 
 function dataProcessing(colName) {
-  console.log(colName);
+  //.log(colName);
 
   var index = csvData.columns.findIndex((column) => column[0] === colName);
   var stValues = csvData.columns[index].slice(1);
 
   var Values = stValues.map(Number);
 
-  console.log(Values);
+  //.log(Values);
 
   const mean = () => {
     let total = 0;
@@ -82,13 +82,13 @@ function dataProcessing(colName) {
     return Math.sqrt(variance);
   };
 
-  //   console.log("Mean:", mean());
-  //   console.log("Median:", median());
-  //   console.log("Mode:", mode());
-  //   console.log("Max:", max());
-  //   console.log("Min:", min());
-  //   console.log("Range:", range());
-  //   console.log("Standard Deviation:", standardDeviation());
+  //   //.log("Mean:", mean());
+  //   //.log("Median:", median());
+  //   //.log("Mode:", mode());
+  //   //.log("Max:", max());
+  //   //.log("Min:", min());
+  //   //.log("Range:", range());
+  //   //.log("Standard Deviation:", standardDeviation());
 
   const text = `Mean of ${colName} is ${mean()}. \n Median of ${colName} is ${median()}. \n
   Mode of ${colName} is ${mode()}. \n
