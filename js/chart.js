@@ -98,21 +98,7 @@ function createSingleChart() {
 }
 
 function createHeatmap() {
-  var zValues = csvData.columns;
-  var cc;
-
-  for (let i = 0; i < zValues.length; i++) {
-    zValues[i].shift();
-    zValues[i] = zValues[i].map(Number);
-  }
-
-  for (let i = 0; i < zValues.length; i++) {
-    for (let j = 0; j < zValues[i].length; j++) {
-      cc = zValues[i][j] / Math.max(...zValues[i]);
-      zValues[i][j] = cc;
-      //.log(cc);
-    }
-  }
+  var zValues = evColumn;
 
   var data = [
     {
@@ -134,7 +120,6 @@ function createHeatmap() {
     },
   };
 
-  //.table(zValues);
   // Plot the heatmap
   Plotly.newPlot("heatMapDiv", data, layout);
 }
