@@ -99,26 +99,26 @@ function createSingleChart() {
 
 function createHeatmap() {
   var zValues = csvData.columns;
+  var cc;
 
-  var numRows = zValues[0].length;
-  var numCols = zValues.length;
-  var rowLabels = [];
-  var colLabels = [];
-
-  for (var i = 0; i < numRows; i++) {
-    rowLabels.push(i);
-  }
-  for (var j = 0; j < numCols; j++) {
-    colLabels.push(j);
+  for (let i = 0; i < zValues.length; i++) {
+    zValues[i].shift();
+    zValues[i] = zValues[i].map(Number);
   }
 
-  console.log(rowLabels, colLabels);
+  for (let i = 0; i < zValues.length; i++) {
+    for (let j = 0; j < zValues[i].length; j++) {
+      cc = zValues[i][j] / Math.max(...zValues[i]);
+      zValues[i][j] = cc;
+      console.log(cc);
+    }
+  }
 
   var data = [
     {
       z: zValues,
-      x: rowLabels,
-      y: rowLabels,
+      x: evRow[0],
+      y: evRow[0],
       type: "heatmap",
     },
   ];
@@ -134,6 +134,7 @@ function createHeatmap() {
     },
   };
 
+  console.table(zValues);
   // Plot the heatmap
   Plotly.newPlot("heatMapDiv", data, layout);
 }
