@@ -1,3 +1,4 @@
+/* Global Styles */
 * {
   margin: 0;
   padding: 0;
@@ -6,6 +7,20 @@
   text-decoration: none;
 }
 
+/* Body Styles */
+body {
+  background: #2e2b2b;
+}
+
+/* Container Styles */
+.container {
+  overflow-x: hidden;
+  height: 100vh;
+  background: url(./assets/bg.png) no-repeat right / cover;
+  width: 100%;
+}
+
+/* Upload Modal Styles */
 .upload {
   display: flex;
   align-items: center;
@@ -16,6 +31,7 @@
   z-index: 10000;
 }
 
+/* Drop Zone Styles */
 #dropZone {
   flex-direction: column;
   display: flex;
@@ -31,6 +47,7 @@
   z-index: 9;
 }
 
+/* Layout Styles */
 .layout {
   background: #32323296;
   height: 100vh;
@@ -38,22 +55,14 @@
   width: 100%;
 }
 
-body {
-  background: #183d3d;
-}
-.container {
-  overflow-x: hidden;
-  height: 100vh;
-  width: 100%;
-}
-
+/* Switcher Styles */
 .switcher {
   position: fixed;
   display: flex;
   padding: 20px;
   width: 90%;
   align-items: center;
-  background: #183d3d;
+  background: #070b0b45;
   justify-content: space-around;
   border-radius: 16px;
   z-index: 999;
@@ -74,37 +83,62 @@ body {
   letter-spacing: 1.5px;
 }
 
+/* Show More Button Styles */
+#showMoreBtn {
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  border-radius: 3px;
+  font-weight: bold;
+  border: 0px;
+  color: #fff;
+  background-image: linear-gradient(45deg, #709dff 0%, #b0c9ff 100%);
+  transition: 0.4s;
+}
+
+#showMoreBtn:hover {
+  background-image: linear-gradient(45deg, #709dff 50%, #b0c9ff 100%);
+}
+
+/* Sections Styles */
+#sections {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+/* Data Section Styles */
 #dataSection {
   display: flex;
 }
 
+/* Data Part Styles */
+.dataPart {
+  display: flex;
+  flex-direction: column;
+  width: 85%;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Section Styles */
 section {
+  width: 85%;
+  padding: 20px;
+  border-radius: 12px;
   display: none;
-  padding: 200px 100px;
-  background: #040d12;
+  margin: 200px 100px;
   box-sizing: border-box;
   color: #fefefe;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background: #161923c7;
 }
 
-h1 {
-  color: #93b1a6;
-}
-
-table {
-  border-collapse: collapse;
-  width: 100%;
-}
-th,
-td {
-  border: 1px solid black;
-  padding: 8px;
-  text-align: left;
-}
-
-.close {
+/* Close and Delete Button Styles */
+.close,
+#Delete {
   padding: 10px;
   margin: 10px;
   border-radius: 6px;
@@ -112,8 +146,10 @@ td {
   color: white;
   font-weight: bold;
   transition: all 0.3s;
+  border: 0px;
 }
 
+/* Upload Button Styles */
 .upload-btn {
   display: block;
   text-align: center;
@@ -126,10 +162,12 @@ td {
   border-radius: 6px;
 }
 
+/* File Input Styles */
 #fileInput {
   margin: 15px;
 }
 
+/* Choose Styles */
 .choose {
   padding: 25px;
   margin: 20px;
@@ -141,43 +179,52 @@ td {
   text-align: center;
 }
 
+/* Select Styles */
 select {
   margin: 8px;
   padding: 5px;
 }
 
+/* Button Styles */
 #createChartBtn,
 #createSingleChartBtn,
 #createHeatmap,
-#analyze,
-#Delete {
-  width: 50%;
-  height: 50px;
+#analyze {
+  width: 30%;
+  padding: 13px;
   margin: 10px auto;
   display: block;
   border-radius: 10px;
   border: none;
   background-image: linear-gradient(to right, #ffb300, #ff7e5a);
   transition: 0.5s ease-in-out;
-  &:hover {
-    transform: scale(1.05);
-    font-weight: bolder;
-    letter-spacing: 1.5px;
-  }
 }
 
-#ana,#delDone{
+#createChartBtn:hover,
+#createSingleChartBtn:hover,
+#createHeatmap:hover,
+#analyze:hover {
+  transform: scale(1.05);
+  font-weight: bolder;
+  letter-spacing: 1.5px;
+}
+
+/* Analysis and Delete Styles */
+#ana,
+#delDone {
   width: 40%;
-  background: #35374B;
+  background: #35374b;
   padding: 20px;
-  border-radius: 6px; 
+  border-radius: 6px;
 }
 
+/* Image Styles */
 img {
   width: 50px;
   border-radius: 50%;
 }
 
+/* Media Queries for Responsive Design */
 @media screen and (max-width: 600px) {
   .switcher {
     width: 100%;
