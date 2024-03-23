@@ -196,7 +196,7 @@ select {
   display: block;
   border-radius: 10px;
   border: none;
-  background-image: linear-gradient(to right, #ffb300, #ff7e5a);
+  background-image: linear-gradient(to right, #089ed7, #ff7e5a);
   transition: 0.5s ease-in-out;
 }
 
