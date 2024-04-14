@@ -67,7 +67,6 @@ function switchSection(me, i) {
     item.classList.remove("active");
   });
   me.classList.add("active");
-
   sections.forEach((item) => {
     item.style.display = "none";
   });

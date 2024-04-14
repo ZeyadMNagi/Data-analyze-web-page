@@ -6,197 +6,31 @@
     <link rel="stylesheet" href="style.css" />
     <link
       rel="shortcut icon"
-      href="./assets/OnlineData.png"
+      href="./App/assets/OnlineData.png"
       type="image/x-icon"
     />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-    />
-    <title>Data Analyze project</title>
+    <title>Landing Page</title>
   </head>
   <body>
     <div class="container">
-      <div class="upload" style="display: none">
-        <div id="dropZone" ondrop="drop(event)" ondragover="allowDrop(event)">
-          <p>Drag and drop CSV files here or click below to select files:</p>
-          <input
-            type="file"
-            id="fileInput"
-            accept=".csv"
-            multiple
-            onchange="handleFileSelect(event)"
-          />
-          <a href="#" onclick="closeUploader()" class="close">Clouse</a>
+      <header>
+        <nav>
+          <ul>
+            <li><a href="./App/index.html">The App</a></li>
+            <li><a href="#Contact">Contact Me</a></li>
+            <li><a href="#Who">Who Am I</a></li>
+          </ul>
+        </nav>
+      </header>
+      <section id="Home">
+        <h1>
+          Welcome to,<br />
+          <span>Data Analyzer Landing Page</span>
+        </h1>
+        <div class="btn">
+            <a href="./App/index.html">Go to the App</a>
         </div>
-        <div class="layout"></div>
-      </div>
-      <div style="display: flex; justify-content: center">
-        <div class="switcher">
-          <img src="./assets/OnlineData.png" alt="logo" />
-          <div
-            onclick="switchSection(this,0)"
-            data-sec="dataSection"
-            class="case"
-          >
-            <h4>The Data</h4>
-
-            <i class="material-icons">data_usage</i>
-          </div>
-          <div
-            onclick="switchSection(this,1)"
-            data-sec="dataFunctions"
-            class="case"
-          >
-            <h4>Some Functions</h4>
-            <i class="material-icons">functions</i>
-          </div>
-          <div
-            onclick="switchSection(this,2)"
-            data-sec="dataVisualize"
-            class="case"
-          >
-            <h4>Visualization</h4>
-            <i class="material-icons">insert_chart</i>
-          </div>
-        </div>
-      </div>
-
-      <div id="sections">
-        <section class="part" id="dataSection">
-          <div class="dataPart">
-            <h1>The Data</h1>
-            <div id="dataContent"></div>
-            <button type="submit" id="showMoreBtn" onclick="showMoreRows()">
-              Show More
-            </button>
-          </div>
-
-          <br /><br /><br />
-          <a
-            href="#"
-            class="upload-btn"
-            onclick="document.querySelector('.upload').style.display = 'flex';"
-            >Upload New CSV File</a
-          >
-        </section>
-        <section class="part" id="dataFunctions">
-          <h1>Some Functions</h1>
-          <br /><br /><br />
-
-          <h4>Choose one column to get the Analyze of it:</h4>
-          <select name="data4" class="data4" id="data4"></select>
-          <br /><br />
-          <div id="ana">
-            <div id="mean"></div>
-            <div id="median"></div>
-            <div id="mode"></div>
-            <div id="max"></div>
-            <div id="min"></div>
-            <div id="range"></div>
-            <div id="standardDeviation"></div>
-          </div>
-
-          <button
-            id="analyze"
-            type="submit"
-            value="Analyze Column"
-            onclick="analyzeColumn()"
-          >
-            Analyze
-          </button>
-
-          <h4>Delete a column from the dataset</h4>
-          <select name="delCol" id="delCol"></select>
-          <br /><br />
-          <div id="delDone"></div>
-
-          <button id="Delete" type="submit" onclick="deleteCol()">
-            Delete
-          </button>
-
-          <a
-            href="#"
-            class="upload-btn"
-            onclick="document.querySelector('.upload').style.display = 'flex';"
-            >Upload New CSV File</a
-          >
-        </section>
-        <section class="part" id="dataVisualize">
-          <h1>Visualization</h1>
-
-          <h2>Heatmap of Correlation Coefficients</h2>
-          <button type="submit" id="createHeatmap" onclick="createHeatmap()">
-            Create Heatmap
-          </button>
-          <div id="heatMapDiv"></div>
-
-          <br /><br />
-
-          <div class="choose">
-            <h2>choose two columns to visualize together:</h2>
-            <select name="type" id="chartType">
-              <option value="bar">Bar Chart</option>
-              <option value="line">Line Chart</option>
-              <option value="scatter">scatter Chart</option>
-            </select>
-            <select name="data1" class="data1" id="data1"></select>
-            <select name="data2" class="data2" id="data2"></select>
-            <button type="submit" id="createChartBtn" onclick="createChart()">
-              Create Chart!
-            </button>
-          </div>
-
-          <div id="myChart"></div>
-
-          <h2>Select one column for visualize it:</h2>
-          <select name="data3" class="data3" id="data3"></select>
-          <select name="type" id="singleType">
-            <option value="pie">Pie Chart</option>
-            <option value="box">Box Chart</option>
-          </select>
-          <button
-            type="submit"
-            id="createSingleChartBtn"
-            onclick="createSingleChart()"
-          >
-            Create Single Chart!</button
-          ><br /><br />
-          <div id="singleMyChart"></div>
-
-          <br /><br /><br />
-          <a
-            href="#"
-            class="upload-btn"
-            onclick="document.querySelector('.upload').style.display = 'flex';"
-            >Upload New CSV File</a
-          >
-        </section>
-      </div>
+      </section>
     </div>
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-WH2W8RJP1T"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-
-      gtag("config", "G-WH2W8RJP1T");
-    </script>
-    <script
-      src="https://cdn.plot.ly/plotly-2.30.0.min.js"
-      charset="utf-8"
-    ></script>
-    <script src="./js/main.js"></script>
-    <script src="./js/fileRead.js"></script>
-    <script src="./js/chart.js"></script>
-    <script src="./js/analyzeColumn.js"></script>
-    <script src="./js/update.js"></script>
-    <script src="./js/fileEdit.js"></script>
   </body>
 </html>
